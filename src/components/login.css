@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+
+.login {  
+  text-align: center;  
+}
+
+.login__title {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.login__input {
+  border: solid 3px black;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0.5rem;
+  padding: 1.5rem;
+  width: 60%;
+}
+
+.login__button {
+  color: white;
+  background-color: rgb(204, 141, 204); 
+  border: solid 3px rgb(204, 141, 204); 
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem;
+  padding: 1rem;
+  width: 60%;
+}
+
+@media screen and (min-width: 1024px) {
+  .login__input {
+    width: 25%;
+  }
+
+  .login__button {
+    width: 25%;
+  }
+  
+}
