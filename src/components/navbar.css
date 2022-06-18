@@ -40,18 +40,19 @@
 }
 
 .navbar__menu {  
+  background-color:  rgb(204, 141, 204);
   position: fixed;
   left: 0; 
   bottom: 4rem;  
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* pointer-events: none; */
-  /* opacity: 0;
-  transition: opacitty.5s ease; */
+  pointer-events: none; 
+  opacity: 0;
+  transition: opacitty.5s ease;
 }
 
-.navbar__menu.is-active {
+.is-active {
   opacity: 1;
   pointer-events: auto;
 }
