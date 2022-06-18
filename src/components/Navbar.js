@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './navbar.css';
 
 
@@ -25,10 +26,10 @@ export const Navbar =()=>{
           
         </button>
         <nav className={active ? 'navbar__menu is-active' : 'navbar__menu'}>      
-          <a className='navbar__link' href="#inicio">Home</a>
-          <a className='navbar__link' href="#acerca">About</a>       
-          <a className='navbar__link navbar__button' href="#Login">Log In</a>
-          <a className='navbar__link navbar__button navbar__button--dark' href="#signup">Sign Up</a>               
+          <Link className='navbar__link' to='/home'>Home</Link>
+          <Link className='navbar__link' to="/about">About</Link>
+          <Link className='navbar__link navbar__button' to='/'>Log In</Link>      
+          <Link className='navbar__link navbar__button navbar__button--dark' to='/signup'>Sign Up</Link>                 
         </nav>
       </section>     
     </header>
