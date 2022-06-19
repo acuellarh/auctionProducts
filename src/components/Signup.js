@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { signupApi } from '../utils/api';
+import { api } from '../utils/api';
 import { useNavigate } from 'react-router-dom';
 import './signup.css'
 
@@ -26,7 +26,7 @@ export const Signup = ()=>{
      if(formValue.name && formValue.email && formValue.password && formValue.confirmationPassword) {
      
       try {
-        const {data} = await signupApi.post('/signup', formValue) 
+        const {data} = await api.post('/signup', formValue) 
         if(data.success){
           resetForm();      
           navigate('/login')    
