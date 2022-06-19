@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { signupApi } from '../utils/api';
+import { useNavigate } from 'react-router-dom';
 import './signup.css'
-
 
 export const Signup = ()=>{
 
@@ -18,17 +18,22 @@ export const Signup = ()=>{
     setFormValue(formInitialValue)
   }
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault()
      console.log(formValue) 
      if(formValue.name && formValue.email && formValue.password && formValue.confirmationPassword) {
      
       try {
-        await signupApi.post('/signup', formValue)        
-      } catch (error) {
+        const {data} = await signupApi.post('/signup', formValue) 
+        if(data.success){
+          resetForm();      
+          navigate('/login')    
+        }         
+      } catch (error) {      
         console.error('error')        
-      }        
-      resetForm()     
+      }
     }
   }
 
@@ -85,7 +90,7 @@ export const Signup = ()=>{
         </div>         
         <button className='register__button' type="submit">Sign Up</button>             
       </form> 
-      <p className='register__paragraph'>Already have an account? <a href='#'>Log In</a></p>
+      <p className='register__paragraph'>Already have an account? <a href='/login'>Log In</a></p>
     </section> 
     
   )

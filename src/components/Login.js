@@ -11,11 +11,10 @@ export const Login = ()=>{
         </div>
         <div>        
           <input className='login__input' type="password" name='password' placeholder='Password'/>
-        </div>
-                 
+        </div>                 
         <button className='login__button' type="submit">Log In</button>             
       </form> 
-      <p className='login__paragraph'>Don{`'`}t have an account? <a href='#'>Sign up</a></p>
+      <p className='login__paragraph'>Don&#39;t have an account? <a href='/signup'>Sign up</a></p>
     </section> 
   )
 }
